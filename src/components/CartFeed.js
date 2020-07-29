@@ -70,7 +70,7 @@ function CartFeed({ inCart, classes, paymentOrder, setOrder }) {
 						</Grid>
 					</Grid>
 					<StripeCheckout
-						stripeKey="pk_test_51H9slJLkHRGl4JifYHpIyrFLhFfssyHkUjB1OnjENvXSKhFGiq3HnEB5b1sGnV6KttrLeY1jz8E4QYhfQKPiBG8L00Dow3SHp7"
+						stripeKey={process.env.REACT_APP_PAYMENT_KEY}
 						token={makePayment}
 						name="Make Payment"
 						amount={paymentAmount * 100}
