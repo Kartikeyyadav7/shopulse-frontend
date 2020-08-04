@@ -15,15 +15,33 @@ const Cart = ({ cart: { inCart, loading }, getCartDetails }) => {
 	}, [getCartDetails]);
 	let cartContent;
 	console.log(inCart.products);
-	if (inCart.products === undefined || loading) {
+	if (loading) {
 		cartContent = <CircularProgress />;
-	} else if (inCart.products === [] || inCart.products === null) {
+	} else if (
+		inCart.products === [] ||
+		inCart.products === null ||
+		inCart.products === undefined ||
+		inCart === undefined
+	) {
 		cartContent = (
-			<Typography
-				variant="h4"
-				style={{ textAlign: "center", marginTop: "5rem" }}
+			<div
+				style={{
+					maxWidth: `500px`,
+					width: `100%`,
+
+					margin: `5rem auto`,
+					display: `flex`,
+					flexDirection: `column`,
+					justifyContent: `center`,
+					alignItems: `center`,
+				}}
 			>
-				Add Products for Checkout
+				<Typography
+					variant="h4"
+					style={{ textAlign: "center", marginTop: "5rem" }}
+				>
+					Add Products for Checkout
+				</Typography>
 				<Button
 					size="small"
 					color="secondary"
@@ -32,14 +50,13 @@ const Cart = ({ cart: { inCart, loading }, getCartDetails }) => {
 					to="/"
 					style={{
 						display: "block",
-						width: "150px",
-						marginLeft: "38rem",
-						marginTop: "2rem",
+						width: `30%`,
+						marginTop: "1rem",
 					}}
 				>
 					Continue Shopping
 				</Button>
-			</Typography>
+			</div>
 		);
 	} else {
 		cartContent = <CartFeed key={uuidv4()} inCart={inCart} />;

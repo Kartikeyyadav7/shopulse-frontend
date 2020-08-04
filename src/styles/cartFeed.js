@@ -26,7 +26,8 @@ const styles = (theme) => ({
 		width: `100%`,
 		margin: `1rem 0 0 9rem`,
 		[theme.breakpoints.down("xs")]: {
-			margin: `1rem 1rem`,
+			margin: `1rem 5rem`,
+			width: `50%`,
 		},
 	},
 });
