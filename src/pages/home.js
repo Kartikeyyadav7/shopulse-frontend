@@ -26,7 +26,6 @@ function Home({ getProducts, product: { products, loading }, classes }) {
 			container
 			direction="row"
 			justify="center"
-			spacing={6}
 			className={classes.itemGrid}
 		>
 			{homeContent}

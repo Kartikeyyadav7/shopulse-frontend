@@ -79,17 +79,17 @@ export const deleteProduct = (productId) => (dispatch) => {
 				type: DELETE_PRODUCT,
 				payload: productId,
 			});
-
 			dispatch(getCartDetails());
 			dispatch(setAlert(msg, "info"));
 		})
 		.catch((err) => {
-			const { error } = err.response.data;
+			console.log(err.response.data);
+			const { errors } = err.response.data;
 			dispatch({
 				type: GET_ERROR,
 				payload: err.response.data,
 			});
-			dispatch(setAlert(error, "error"));
+			dispatch(setAlert(errors, "error"));
 		});
 };
 

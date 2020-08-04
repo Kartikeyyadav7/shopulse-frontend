@@ -11,7 +11,10 @@ import { connect } from "react-redux";
 
 const CartItems = ({ classes, product, deleteProduct }) => {
 	const finalPrice = product.quantity * product.price;
-
+	const productDelete = () => {
+		console.log("deleted");
+		deleteProduct(product.product);
+	};
 	return (
 		<div className={classes.root}>
 			<Paper className={classes.paper1}>
@@ -36,7 +39,7 @@ const CartItems = ({ classes, product, deleteProduct }) => {
 									size="small"
 									color="secondary"
 									variant="contained"
-									onClick={() => deleteProduct(product.product)}
+									onClick={productDelete}
 								>
 									Remove
 								</Button>

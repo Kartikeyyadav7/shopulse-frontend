@@ -31,10 +31,10 @@ if (localStorage.token) {
 
 function App() {
 	return (
-		<div className="App">
-			<Provider store={store}>
-				<Router>
-					<Navbar />
+		<Provider store={store}>
+			<Router>
+				<Navbar />
+				<div className="App">
 					<Alert />
 					<Switch>
 						<Route exact path="/" component={Home} />
@@ -43,9 +43,9 @@ function App() {
 						<ProtectedRoute exact path="/mycart" component={Cart} />
 						<ProtectedRoute exact path="/myorders" component={Order} />
 					</Switch>
-				</Router>
-			</Provider>
-		</div>
+				</div>
+			</Router>
+		</Provider>
 	);
 }
 

@@ -7,6 +7,9 @@ const styles = (theme) => ({
 	},
 	media: {
 		width: "345px",
+		[theme.breakpoints.down("xs")]: {
+			width: "17rem",
+		},
 		maxHeight: "240px",
 		objectFit: "cover",
 	},

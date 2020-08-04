@@ -32,63 +32,51 @@ function CartFeed({ inCart, classes, paymentOrder, setOrder }) {
 	};
 
 	return (
-		<div>
-			<Grid item xs container direction="row">
-				<div className={classes.products}>
-					{inCart.products.map((product) => (
-						<CartItems key={product.id} product={product} />
-					))}
-				</div>
-				<Paper className={classes.paper}>
-					<Grid container>
-						<Grid item xs={12} sm container style={{ margin: "2rem" }}>
-							<Grid item xs container direction="column" spacing={10}>
-								<Grid item xs>
-									<Typography
-										gutterBottom
-										variant="subtitle1"
-										style={{ marginBottom: "18px" }}
-									>
-										Price - {inCart.products.length} Items
-									</Typography>
-									<Typography variant="subtitle1" gutterBottom>
-										Delivery Fees
-									</Typography>
-								</Grid>
-							</Grid>
-							<Grid item xs container direction="column" spacing={2}>
-								<Grid item>
-									<Typography variant="subtitle1">
-										{" "}
-										$ {paymentAmount}{" "}
-									</Typography>
-								</Grid>
-								<Grid item>
-									<Typography variant="subtitle1"> Free Delivery </Typography>
-								</Grid>
-							</Grid>
-						</Grid>
-					</Grid>
-					<StripeCheckout
-						stripeKey={process.env.REACT_APP_PAYMENT_KEY}
-						token={makePayment}
-						name="Make Payment"
-						amount={paymentAmount * 100}
-						shippingAddress
-						billingAddress
-					>
-						<Button
-							variant="contained"
-							color="primary"
-							style={{ margin: "2rem", width: "20rem" }}
-							onClick={makeOrder}
-						>
-							Order
-						</Button>
-					</StripeCheckout>
-				</Paper>
+		<Grid container direction="row" className={classes.root}>
+			<Grid item className={classes.products}>
+				{inCart.products.map((product) => (
+					<CartItems key={product.id} product={product} />
+				))}
 			</Grid>
-		</div>
+			<Paper className={classes.paper}>
+				<Grid
+					xs={12}
+					sm
+					container
+					style={{ textAlign: "center", paddingTop: "1rem" }}
+				>
+					<Grid item xs direction="row">
+						<Typography gutterBottom variant="subtitle1">
+							Price - {inCart.products.length} Items
+						</Typography>
+						<Typography variant="subtitle1" gutterBottom>
+							Delivery Fees
+						</Typography>
+					</Grid>
+					<Grid item xs>
+						<Typography variant="subtitle1"> $ {paymentAmount} </Typography>
+						<Typography variant="subtitle1"> Free Delivery </Typography>
+					</Grid>
+				</Grid>
+				<StripeCheckout
+					stripeKey={process.env.REACT_APP_PAYMENT_KEY}
+					token={makePayment}
+					name="Make Payment"
+					amount={paymentAmount * 100}
+					shippingAddress
+					billingAddress
+				>
+					<Button
+						variant="contained"
+						color="primary"
+						className={classes.button}
+						onClick={makeOrder}
+					>
+						Order
+					</Button>
+				</StripeCheckout>
+			</Paper>
+		</Grid>
 	);
 }
 

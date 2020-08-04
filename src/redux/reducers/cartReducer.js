@@ -33,7 +33,7 @@ export default function (state = initialState, action) {
 			return {
 				...state,
 				laoding: false,
-				inCart: state.inCart.filter(
+				inCart: state.inCart.products.filter(
 					(product) => product._id !== action.payload
 				),
 			};

@@ -15,9 +15,9 @@ const Cart = ({ cart: { inCart, loading }, getCartDetails }) => {
 	}, [getCartDetails]);
 	let cartContent;
 	console.log(inCart.products);
-	if (loading) {
+	if (inCart.products === undefined || loading) {
 		cartContent = <CircularProgress />;
-	} else if (inCart.products === null || inCart.products === undefined) {
+	} else if (inCart.products === [] || inCart.products === null) {
 		cartContent = (
 			<Typography
 				variant="h4"

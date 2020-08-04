@@ -42,7 +42,7 @@ const Order = ({ order: { order, loading }, getOrder }) => {
 		);
 	} else {
 		// orderContent = <OrderFeed key={uuidv4()} order={order} />;
-		orderContent = <h1>My orders</h1>;
+		orderContent = <h1 style={{ textAlign: "center" }}>My orders</h1>;
 	}
 	return <div>{orderContent}</div>;
 };

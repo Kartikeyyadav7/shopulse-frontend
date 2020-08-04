@@ -33,7 +33,7 @@ const Login = (props) => {
 	if (props.isAuthenticated) {
 		props.history.push("/");
 	}
-
+ 
 	const { classes } = props;
 	return (
 		<div className={classes.loginPage}>
