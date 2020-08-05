@@ -7,12 +7,18 @@ const styles = (theme) => ({
 		flexWrap: "wrap",
 		margin: "1rem auto",
 		maxWidth: "1100px",
+		[theme.breakpoints.down("xs")]: {
+			flexDirection: "row",
+		},
 	},
 	form: {
 		display: "flex",
 		flexWrap: "wrap",
 		alignContent: "flexStart",
 		width: "525px",
+		[theme.breakpoints.down("xs")]: {
+			justifyContent: "center",
+		},
 	},
 	formField: {
 		margin: "1.2rem",
@@ -29,6 +35,9 @@ const styles = (theme) => ({
 		right: "-10rem",
 		marginTop: "1rem",
 		marginBottom: "1rem",
+		[theme.breakpoints.down("xs")]: {
+			right: "0rem",
+		},
 	},
 });
 
