@@ -11,14 +11,16 @@ const styles = (theme) => ({
 	form: {
 		display: "flex",
 		flexDirection: "column",
+		paddingRight: "1rem",
 	},
 	formField: {
 		margin: "1rem",
 	},
 	image: {
-		width: "330px",
+		width: "304px",
 		height: "188px",
 		marginTop: "-40px",
+		marginLeft: "-1.5rem",
 	},
 	button: {
 		width: "14rem",

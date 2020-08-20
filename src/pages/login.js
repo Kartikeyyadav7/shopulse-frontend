@@ -33,12 +33,15 @@ const Login = (props) => {
 	if (props.isAuthenticated) {
 		props.history.push("/");
 	}
- 
+
 	const { classes } = props;
 	return (
 		<div className={classes.loginPage}>
 			<img src={shopulse} alt="shopulse" className={classes.image} />
-			<Typography variant="h4" style={{ marginBottom: "1rem" }}>
+			<Typography
+				variant="h4"
+				style={{ marginBottom: "1rem", paddingRight: "1rem" }}
+			>
 				Welcome Back
 			</Typography>
 			<form noValidate onSubmit={handleSubmit} className={classes.form}>

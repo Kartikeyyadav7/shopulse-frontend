@@ -25,7 +25,7 @@ const styles = (theme) => ({
 		marginTop: "1.3rem",
 	},
 	image: {
-		width: "330px",
+		width: "304px",
 		height: "188px",
 		marginTop: "-40px",
 	},
