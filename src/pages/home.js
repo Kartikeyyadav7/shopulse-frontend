@@ -12,7 +12,7 @@ function Home({ getProducts, product: { products, loading }, classes }) {
 	useEffect(() => {
 		getProducts();
 	}, [getProducts]);
-	let homeContent;
+	let homeContent; 
 
 	if (products === null || loading) {
 		homeContent = <CircularProgress />;

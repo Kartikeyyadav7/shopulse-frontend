@@ -6,7 +6,7 @@ import setAuthToken from "../../utils/setAuthToken";
 
 export const registerUser = (userDetails) => (dispatch) => {
 	axios
-		.post("https://shopulse-backend.herokuapp.com/api/user/signup", userDetails)
+		.post("http://localhost:5000/api/user/signup", userDetails)
 		.then((res) => {
 			const { token } = res.data;
 			localStorage.setItem("token", token);
@@ -16,16 +16,18 @@ export const registerUser = (userDetails) => (dispatch) => {
 		})
 		.catch((err) => {
 			const error = err.response.data.errors;
+
 			if (error) {
 				error.forEach((error) => {
 					dispatch(setAlert(error, "error"));
 				});
+				console.log(error);
 			}
 		});
 };
 export const loginUser = (userDetails) => (dispatch) => {
 	axios
-		.post("https://shopulse-backend.herokuapp.com/api/user/login", userDetails)
+		.post("http://localhost:5000/api/user/login", userDetails)
 		.then((res) => {
 			const { token } = res.data;
 			localStorage.setItem("token", token);
@@ -35,8 +37,11 @@ export const loginUser = (userDetails) => (dispatch) => {
 		})
 		.catch((err) => {
 			const error = err.response.data.errors;
+
 			if (error) {
-				dispatch(setAlert(error, "error"));
+				error.forEach((error) => {
+					dispatch(setAlert(error, "error"));
+				});
 			}
 		});
 };

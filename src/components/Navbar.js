@@ -16,7 +16,7 @@ import Shopulse from "../images/shopulse-logo4.png";
 
 function Navbar({ classes, logoutUser, auth }) {
 	const [anchorEl, setAnchorEl] = React.useState(null);
-
+ 
 	const handleClick = (event) => {
 		setAnchorEl(event.currentTarget);
 	};
@@ -26,7 +26,7 @@ function Navbar({ classes, logoutUser, auth }) {
 	};
 
 	const guestNavbar = (
-		<div className={classes.root}>
+		<div className={classes.root}> 
 			<AppBar position="static">
 				<Toolbar className={classes.container}>
 					<Button

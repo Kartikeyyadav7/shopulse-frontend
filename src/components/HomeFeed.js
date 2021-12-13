@@ -6,3 +6,4 @@ function HomeFeed({ products }) {
 }
 
 export default HomeFeed;
+ 

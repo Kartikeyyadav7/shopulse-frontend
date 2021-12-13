@@ -14,4 +14,4 @@ export const DELETE_CART = "DELETE_CART";
 export const SET_ORDER = "SET_ORDER";
 export const GET_ORDER = "GET_ORDER";
 export const ORDER_LOADING = "ORDER_LOADING";
-export const GET_CART_BY_ID = "GET_CART_BY_ID";
+export const GET_CART_BY_ID = "GET_CART_BY_ID"; 

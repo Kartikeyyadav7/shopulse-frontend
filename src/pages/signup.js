@@ -38,7 +38,7 @@ function Signup(props) {
 			lastName: lastName,
 			email: email,
 			password: password,
-		};
+		}; 
 		props.registerUser(userDetails);
 	};
 	const { classes } = props;

@@ -5,14 +5,15 @@ import { setAlert } from "./alertAction";
 
 export const paymentOrder = (details) => (dispatch) => {
 	axios
-		.post("https://shopulse-backend.herokuapp.com/api/order/payment", details)
+		.post("http://localhost:5000/api/order/payment", details)
 		.then((res) => {
 			const { msg } = res.data;
 			dispatch({
 				type: ORDER_PAYMENT,
 			});
 			dispatch(deleteCart());
-			dispatch(setAlert(msg, "info"));
+			console.log(msg);
+			// dispatch(setAlert(msg, "info"));
 		})
 		.catch((err) => {
 			const { error } = err.response.data;

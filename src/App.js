@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 import Alert from "./components/Alert";
 // Pages
 import Home from "./pages/home";
-import Login from "./pages/login";
+import Login from "./pages/login"; 
 import Signup from "./pages/signup";
 import Cart from "./pages/cart";
 import Order from "./pages/order";

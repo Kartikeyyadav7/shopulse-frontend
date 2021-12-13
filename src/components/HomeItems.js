@@ -8,7 +8,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Snackbar from "@material-ui/core/Snackbar";
-import { addProductToCart } from "../redux/actions/cartAction";
+import { addProductToCart } from "../redux/actions/cartAction"; 
 import { connect } from "react-redux";
 import MuiAlert from "@material-ui/lab/Alert";
 import InputLabel from "@material-ui/core/InputLabel";

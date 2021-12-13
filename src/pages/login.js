@@ -27,7 +27,7 @@ const Login = (props) => {
 			email,
 			password,
 		};
-		props.loginUser(userDetails);
+		props.loginUser(userDetails); 
 	};
 
 	if (props.isAuthenticated) {

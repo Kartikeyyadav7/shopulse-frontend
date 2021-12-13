@@ -16,7 +16,7 @@ const styles = (theme) => ({
 	buttonSignUp: {
 		marginRight: theme.spacing(2),
 	},
-
+ 
 	buttonLogin: {
 		marginRight: theme.spacing(3),
 	},

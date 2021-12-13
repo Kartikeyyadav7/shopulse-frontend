@@ -13,7 +13,7 @@ import { setAlert } from "./alertAction";
 export const getCartDetails = () => (dispatch) => {
 	dispatch(setLoadingCart());
 	axios
-		.get("https://shopulse-backend.herokuapp.com/api/cart/all")
+		.get("http://localhost:5000/api/cart/all")
 		.then((res) => {
 			dispatch({
 				type: GET_CART,
@@ -31,7 +31,7 @@ export const getCartDetails = () => (dispatch) => {
 export const getCartById = (cartId) => (dispatch) => {
 	dispatch(setLoadingCart());
 	axios
-		.get(`https://shopulse-backend.herokuapp.com/api/cart/${cartId}`)
+		.get(`http://localhost:5000/api/cart/${cartId}`)
 		.then((res) => {
 			dispatch({
 				type: GET_CART_BY_ID,
@@ -46,41 +46,40 @@ export const getCartById = (cartId) => (dispatch) => {
 		});
 };
 
-export const addProductToCart = ({ product, name, image, quantity, price }) => (
-	dispatch
-) => {
-	axios
-		.post("https://shopulse-backend.herokuapp.com/api/cart/add", {
-			product,
-			name,
-			image,
-			quantity,
-			price,
-		})
-		.then((res) => {
-			dispatch({
-				type: PRODUCT_ADDED_TO_CART,
+export const addProductToCart =
+	({ product, name, image, quantity, price }) =>
+	(dispatch) => {
+		axios
+			.post("http://localhost:5000/api/cart/add", {
+				product,
+				name,
+				image,
+				quantity,
+				price,
+			})
+			.then((res) => {
+				dispatch({
+					type: PRODUCT_ADDED_TO_CART,
+				});
+			})
+			.catch((err) => {
+				// console.log(err.response.data);
+				console.log(err);
 			});
-		})
-		.catch((err) => {
-			console.log(err.response.data);
-		});
-};
+	};
 
 export const deleteProduct = (productId) => (dispatch) => {
 	axios
-		.delete(
-			`https://shopulse-backend.herokuapp.com/api/cart/delete/product/${productId}`
-		)
+		.delete(`http://localhost:5000/api/cart/delete/product/${productId}`)
 		.then((res) => {
 			console.log(res.data);
-			const { msg } = res.data;
+			// const { msg } = res.data;
 			dispatch({
 				type: DELETE_PRODUCT,
 				payload: productId,
 			});
 			dispatch(getCartDetails());
-			dispatch(setAlert(msg, "info"));
+			// dispatch(setAlert(msg, "info"));
 		})
 		.catch((err) => {
 			console.log(err.response.data);
