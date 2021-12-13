@@ -5,7 +5,7 @@ import { setAlert } from "./alertAction";
 
 export const paymentOrder = (details) => (dispatch) => {
 	axios
-		.post("http://localhost:5000/api/order/payment", details)
+		.post("https://shopulse-backend.herokuapp.com/api/order/payment", details)
 		.then((res) => {
 			const { msg } = res.data;
 			dispatch({

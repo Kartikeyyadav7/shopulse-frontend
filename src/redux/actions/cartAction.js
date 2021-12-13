@@ -13,7 +13,7 @@ import { setAlert } from "./alertAction";
 export const getCartDetails = () => (dispatch) => {
 	dispatch(setLoadingCart());
 	axios
-		.get("http://localhost:5000/api/cart/all")
+		.get("https://shopulse-backend.herokuapp.com/api/cart/all")
 		.then((res) => {
 			dispatch({
 				type: GET_CART,
@@ -31,7 +31,7 @@ export const getCartDetails = () => (dispatch) => {
 export const getCartById = (cartId) => (dispatch) => {
 	dispatch(setLoadingCart());
 	axios
-		.get(`http://localhost:5000/api/cart/${cartId}`)
+		.get(`https://shopulse-backend.herokuapp.com/api/cart/${cartId}`)
 		.then((res) => {
 			dispatch({
 				type: GET_CART_BY_ID,
@@ -50,7 +50,7 @@ export const addProductToCart =
 	({ product, name, image, quantity, price }) =>
 	(dispatch) => {
 		axios
-			.post("http://localhost:5000/api/cart/add", {
+			.post("https://shopulse-backend.herokuapp.com/api/cart/add", {
 				product,
 				name,
 				image,
@@ -70,7 +70,9 @@ export const addProductToCart =
 
 export const deleteProduct = (productId) => (dispatch) => {
 	axios
-		.delete(`http://localhost:5000/api/cart/delete/product/${productId}`)
+		.delete(
+			`https://shopulse-backend.herokuapp.com/api/cart/delete/product/${productId}`
+		)
 		.then((res) => {
 			console.log(res.data);
 			// const { msg } = res.data;

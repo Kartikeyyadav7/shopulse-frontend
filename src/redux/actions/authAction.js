@@ -6,7 +6,7 @@ import setAuthToken from "../../utils/setAuthToken";
 
 export const registerUser = (userDetails) => (dispatch) => {
 	axios
-		.post("http://localhost:5000/api/user/signup", userDetails)
+		.post("https://shopulse-backend.herokuapp.com/api/user/signup", userDetails)
 		.then((res) => {
 			const { token } = res.data;
 			localStorage.setItem("token", token);
@@ -27,7 +27,7 @@ export const registerUser = (userDetails) => (dispatch) => {
 };
 export const loginUser = (userDetails) => (dispatch) => {
 	axios
-		.post("http://localhost:5000/api/user/login", userDetails)
+		.post("https://shopulse-backend.herokuapp.com/api/user/login", userDetails)
 		.then((res) => {
 			const { token } = res.data;
 			localStorage.setItem("token", token);
